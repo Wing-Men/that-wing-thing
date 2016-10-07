@@ -1,0 +1,16 @@
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+#twitter {
+  height: 250px;
+  width: 100%;
+  outline: 1px solid black;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}

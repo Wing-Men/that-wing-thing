@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link type="text/css" rel="stylesheet" href="vendor/styles/icoMoon.css">
+    <link type="text/css" rel="stylesheet" href="styles/base.css">
+    <link type="text/css" rel="stylesheet" href="styles/layout.css">
+    <link type="text/css" rel="stylesheet" href="styles/modules.css">
+
+  </head>
+  <body>
+
+    <header class="clearfix">
+      <h1 id="logo">Wing Week</h1>
+      <nav>
+        <div class="icon-menu"></div>
+        <ul>
+          <li>Check In</li>
+          <li>Wing Walk</li>
+          <li>About</li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="wing-map">
+      <div id="map"></div>
+    </section>
+
+    <section id="twitter">
+      TWITTER!!!!!!!
+    </section>
+    <!-- vendor scripts -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=*************&callback=initMap"></script>
+    <script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="vendor/scripts/page.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <!-- model scripts -->
+    <script type="text/javascript" src="scripts/model/mapModel.js"></script>
+    <script type="text/javascript" src="scripts/model/userProg.js"></script>
+    <script type="text/javascript" src="scripts/model/vote.js"></script>
+    <!-- view scripts -->
+    <script type="text/javascript" src="scripts/view/appView.js"></script>
+    <script type="text/javascript" src="scripts/view/mapView.js"></script>
+    <script type="text/javascript" src="scripts/view/progView.js"></script>
+    <script type="text/javascript" src="scripts/view/storeInfoView.js"></script>
+    <script type="text/javascript" src="scripts/view/twitterView.js"></script>
+    <!-- controller scripts -->
+    <script type="text/javascript" src="scripts/controller/clientController.js"></script>
+    <script type="text/javascript" src="scripts/controller/siteController.js"></script>
+    <script type="text/javascript" src="scripts/controller/twitterController.js"></script>
+    <script type="text/javascript" src="scripts/controller/userController.js"></script>
+  </body>
+</html>
