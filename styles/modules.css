@@ -26,6 +26,90 @@ nav:hover ul {
 
 }
 
+/*twitter styles*/
+#twitter {
+  font-family: sans-serif;
+}
+
+#twitter h2 a {
+  font-size: 27px;
+  line-height: 36px;
+  font-weight: 300;
+  margin-left: 40px;
+  color: #3b94d9;
+  text-decoration: none;
+}
+.tweet {
+  border-top: 1px solid #999;
+  padding: 10px;
+}
+
+.tweet:hover {
+  background-color: #EEE;
+}
+
+.tweet p {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 300;
+  margin-left: 40px;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+div.author-link {
+  display: inline-block;
+}
+
+.author-link p {
+  margin-left: 4px;
+  margin-bottom: 2px;
+}
+
+.author-link a {
+  color: #8899A6;
+  text-decoration: none;;
+  font-weight: 300;
+}
+
+.author-link a span{
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  color: black;
+}
+
+.user-thumbnail {
+    float: left;;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    border-radius: 4px;
+    max-width: 100%;
+    max-height: 100%
+}
+
+.author-link a span:hover {
+  color: #55acee
+}
+
+ul.tweet-actions {
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.tweet-actions li {
+  display: inline-block;
+}
+
+img.tweet-img {
+  max-width: 100%;
+  max height: 100%;
+  margin-left: 40px;
+}
+
 @media only screen and (min-width:700px) {
   nav ul {
     display: block;
