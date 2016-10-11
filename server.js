@@ -31,3 +31,24 @@ app.get('*', function(request, response) {
 app.listen(port, function() {
   console.log('Server started on port ' + port + '!');
 });
+
+var mysql = require('mysql');
+var mySqlPw = process.env.MY_SQL_PASSWORD;
+
+var con = mysql.createConnection({
+  host: '138.68.20.49',
+  user: 'root',
+  password: mySqlPw
+});
+
+con.connect(function(err) {
+  if(err) {
+    console.log('Error connecting to Db:', err);
+    return;
+  }
+  console.log('Connection established');
+});
+
+con.end(function(err) {
+
+});
