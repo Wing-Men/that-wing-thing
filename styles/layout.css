@@ -3,11 +3,25 @@
   width: 80%;
   padding: 16px;
 }
+#locations {
+  float: right;
+}
+#locations>ul {
+  padding: 0;
+  margin-right: 8px;
+}
+#locationList>li {
+  list-style: none;
+  font-size: .8em;
+  margin: 4px;
 
+}
 #twitter {
+  margin-top: 10px;
   height: 250px;
   width: 100%;
-  outline: 1px solid black;
+  outline: 2px solid #631508;
+
 }
 
 .clearfix::after {
