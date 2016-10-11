@@ -9,6 +9,22 @@
     <link type="text/css" rel="stylesheet" href="styles/modules.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa|Kaushan+Script" rel="stylesheet">
 
+      <script id="tweet-template" type="text/x-handlebars-template">
+        <div class="tweet">
+          <img class="user-thumbnail" src={{userImg}}/>
+          <div class="author-link">
+            <p><a href="https://twitter.com/{{screenName}}"><span>{{name}}</span>@{{screenName}}</a></p>
+          </div>
+          <div class="tweet-content">
+            <p>{{text}}</p>
+            <img class="tweet-img" src="{{img}}"/>
+          </div>
+          <ul class="tweet-actions">
+            <li>{{likes}}</li>
+            <li>{{retweets}}</li>
+          </ul>
+        </div>
+      </script>
   </head>
   <body>
 
@@ -29,7 +45,7 @@
     </section>
 
     <section id="twitter" >
-      TWITTER!!!!!!!
+    <h2><a href="https://twitter.com/search?q=%23wingweek&src=typd">#wingweek</a><h2>
     </section>
     <!-- vendor scripts -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5a0FL1YiEAyiJXueZISsLA8BxlWLReAs&callback=initMap"></script>
