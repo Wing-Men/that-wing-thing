@@ -33,18 +33,19 @@
       <nav>
         <div class="icon-menu"></div>
         <ul>
-          <li>Check In</li>
-          <li>Wing Walk</li>
-          <li>About</li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/checkin">Check In</a></li>
+          <li><a href="/wingwalk">Wing Walk</a></li>
+          <li><a href="/about">About</a></li>
         </ul>
       </nav>
     </header>
 
-    <section id="wing-map">
+    <section id="wing-map" class="tab-content">
       <div id="map"></div>
     </section>
 
-    <section id="user-progress">
+    <section id="user-progress" class="tab-content">
       <div id="chart-container" class="clearfix">
         <div id="wing-walk"></div>
         <div id="wing-outline"></div>
@@ -63,16 +64,16 @@
       </div>
     </section>
 
-    <section id="twitter" >
+    <section id="twitter" class="tab-content">
     <h2><a href="https://twitter.com/search?q=%23wingweek&src=typd">#wingweek</a><h2>
     </section>
 
     <!-- vendor scripts -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5a0FL1YiEAyiJXueZISsLA8BxlWLReAs&callback=initMap"></script>
+    <script type="text/javascript" src="vendor/scripts/page.js"></script>
     <script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="vendor/scripts/html5sql.js"></script>
     <script type="text/javascript" src="vendor/scripts/webdb.js"></script>
-    <script type="text/javascript" src="vendor/scripts/page.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
     <!-- model scripts -->
@@ -92,6 +93,8 @@
     <script type="text/javascript" src="scripts/controller/siteController.js"></script>
     <script type="text/javascript" src="scripts/controller/twitterController.js"></script>
     <script type="text/javascript" src="scripts/controller/userController.js"></script>
+    <script type="text/javascript" src="scripts/controller/progressController.js"></script>
+    <script type="text/javascript" src="scripts/controller/routes.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
