@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express'),
-  requestProxy = require('express-request-proxy'),
+  requestProxy = require('express-request-proxy'), //eslint-disable-line
   port = process.env.PORT || 3000,
   app = express(),
   Twit = require('twit');
@@ -50,6 +50,62 @@ con.connect(function(err) {
   console.log('Connection established');
 });
 
-con.end(function(err) {
+con.end(function(err) { //eslint-disable-line
 
 });
+
+//Sequelize
+var Sequelize = require('sequelize');
+var connection = new Sequelize('wingweek', 'root', process.env.MY_SQL_PASSWORD);
+
+var atLocation = connection.define('restaurants', {
+  id: {
+    type: Sequelize.INTEGER(11), //eslint-disable-line
+    allowNull: false,
+    primaryKey: true
+  },
+  name: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  address: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  phone: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  website: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  rating: {
+    type: Sequelize.INTEGER(11), //eslint-disable-line
+    allowNull: true
+  },
+  latitude: {
+    type: Sequelize.STRING,
+    allowNull: true
+  },
+  longitude: {
+    type: Sequelize.STRING,
+    allowNull: true
+  }
+}, {
+  timestamps: false,
+  tableName: 'restaurants'
+
+});
+
+connection.sync().then(function () {
+  atLocation.findById(0).then(function(location){
+    console.log('worked', location);
+  });
+
+});
+
+connection.query('SELECT * FROM restaurants', { type:Sequelize.QueryTypes.SELECT })
+        .then(function(data) {
+          console.log(data);
+        });
