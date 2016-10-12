@@ -5,7 +5,7 @@
   UserProgressView.renderProgress = function() {
     //grab the fav total visited and list of visited from currUser
     //render some sort of chart
-    var progress = (currUser.totalVisited * 100/ 19).toString();
+    var progress = (currUser.totalVisited * 100 / 19).toString();
     console.log(progress);
     $('#wing-walk').animate({width: progress + '%'},1500, 'swing');
   };
