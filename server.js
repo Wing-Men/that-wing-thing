@@ -9,15 +9,12 @@ var express = require('express'),
 var proxyTwit = function(request, response) {
   console.log('Routing twitter request for tweets');
   var T = new Twit({
-    // consumer_key:         process.env.TWITTER_KEY,
-    // consumer_secret:      process.env.TWITTER_KEY_PRIVATE,
-    // access_token:         process.env.TWITTER_TOKEN,
-    // access_token_secret:  process.env.TWITTER_TOKEN_PRIVATE
-    consumer_key:         '',
-    consumer_secret:      '',
-    access_token:         '',
-    access_token_secret:  ''
+    consumer_key:         process.env.TWITTER_KEY,
+    consumer_secret:      process.env.TWITTER_KEY_PRIVATE,
+    access_token:         process.env.TWITTER_TOKEN,
+    access_token_secret:  process.env.TWITTER_TOKEN_PRIVATE
   });
+
   T.get('search/tweets', { q: '#cats', count: 5 }, function(err, data) {
     response.json(data);
   });
