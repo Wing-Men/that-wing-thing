@@ -1,5 +1,3 @@
-GNU nano 2.2.6                                  File: server.js
-
 'use strict';
 
 var express = require('express'),
