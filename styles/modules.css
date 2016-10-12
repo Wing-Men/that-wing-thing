@@ -39,6 +39,66 @@ nav:hover ul {
   height: 100px;
 }
 
+.marker {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  z-index: .5;
+  background-color: #CCC;
+  position: absolute;
+  bottom: 32.5%
+}
+
+#marker-0 {
+  left: 0;
+  background-color: black;
+}
+
+#marker-1 {
+  left: 25%;
+}
+
+#marker-2 {
+  left: 50%;
+}
+
+#marker-3 {
+  left: 75%;
+}
+
+#marker-4 {
+  right: 0;
+}
+
+
+#marker-filled-1 {
+  left: 25%;
+  background-color: black;
+  display: none;
+  z-index: .75;
+}
+
+#marker-filled-2 {
+  left: 50%;
+  background-color: black;
+  display: none;
+  z-index: .75;
+}
+
+#marker-filled-3 {
+  left: 75%;
+  background-color: black;
+  display: none;
+  z-index: .75;
+}
+
+#marker-filled-4 {
+  right: 0;
+  background-color: black;
+  display: none;
+  z-index: .75;
+}
+
 #wing-walk {
   /*float: left;*/
   background-color: black;
@@ -62,6 +122,11 @@ nav:hover ul {
   left: 0;
   z-index: 0;
   width: 100%;
+}
+
+#votes {
+  height: 40%;
+  width: 100%
 }
 
 /*twitter styles*/
