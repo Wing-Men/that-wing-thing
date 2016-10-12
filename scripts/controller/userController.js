@@ -8,8 +8,7 @@
         console.log('the password is', pass[0].password);
         if(password === pass[0].password) {
           console.log('The password matches the username get user info');
-          User.setCurrUser(name, voteView.renderForm);
-          // debugger;
+          User.setCurrUser(name, voteView.renderForm, UserProgressView.sitesVisitedtoArray);
         } else {
           console.log('WRONG');
         }

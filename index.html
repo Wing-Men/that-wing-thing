@@ -29,6 +29,9 @@
     <script id="vote-template" type="text/x-handlebars-template">
       <option value="{{name}}">{{name}}</option>
     </script>
+    <script id="site-list-template" type="text/x-handlebars-template">
+      <li class="clickable" value="{{name}}">{{name}}</li>
+    </script>
   </head>
   <body>
 
@@ -72,6 +75,11 @@
         <div id="marker-filled-2" class="marker"></div>
         <div id="marker-filled-3" class="marker"></div>
         <div id="marker-filled-4" class="marker"></div>
+      </div>
+      <div id="visited-sites">
+        <p>Select the restaraunts you have visited</p>
+        <ul>
+        </ul>
       </div>
       <div id="votes">
         <canvas id="vote-chart" width="4000" height="800"></canvas>
