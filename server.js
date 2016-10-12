@@ -111,3 +111,44 @@ connection.query('SELECT * FROM restaurants', { type:Sequelize.QueryTypes.SELECT
       .then(function(data) {
         console.log(data);
 });
+
+// Initialize server
+var server, app;
+if (process.env.USE_RESTIFY) {
+  var restify = require('restify');
+  app = server = restify.createServer()
+  app.use(restify.queryParser());
+  app.use(restify.bodyParser());
+} else {
+  var express = require('express'),
+      bodyParser = require('body-parser');
+
+  var app = express();
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: false }));
+  server = http.createServer(app);
+}
+
+// Initialize epilogue
+epilogue.initialize({
+  app: app,
+  sequelize: connection
+});
+
+// Create REST resource
+var userResource = epilogue.resource({
+  model: User,
+  endpoints: ['/wings', '/wings/:id']
+});
+
+// Create connection and listen
+connection
+  .sync()
+  .then(function() {
+    server.listen(function() {
+      var host = server.address().address,
+          port = server.address().port;
+
+      console.log('listening at http://%s:%s', host, port);
+    });
+  });
