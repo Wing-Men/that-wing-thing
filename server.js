@@ -4,6 +4,9 @@ var express = require('express'),
 requestProxy = require('express-request-proxy'), //eslint-disable-line
 port = process.env.PORT || 3000,
 app = express(),
+http = require('http'),
+sequelize = require('sequelize'),
+epilogue = require('epilogue'),
 Twit = require('twit');
 
 var proxyTwit = function(request, response) {
@@ -132,7 +135,7 @@ epilogue.initialize({
 
 // Create REST resource
 var userResource = epilogue.resource({
-  model: User,
+  model: atLocation,
   endpoints: ['/wings', '/wings/:id']
 });
 
