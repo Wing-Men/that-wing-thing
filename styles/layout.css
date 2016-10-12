@@ -3,10 +3,28 @@
   width: 80%;
   padding: 16px;
 }
+#locations {
+  float: right;
+}
+#locations>ul {
+  padding: 0;
+  margin-right: 8px;
+}
+#locationList>li {
+  list-style: none;
+  font-size: .8em;
+  margin: 4px;
 
+}
 #twitter {
+  margin-top: 10px;
   height: 250px;
   width: 100%;
+<<<<<<< HEAD
+=======
+  outline: 2px solid #631508;
+
+>>>>>>> 22f56ad9057720a66a058f60884185469226f6d6
 }
 
 .clearfix::after {
