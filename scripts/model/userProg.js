@@ -17,16 +17,17 @@ var currUser;
       }
     );
   };
-  User.setCurrUser = function(name) {
+  User.setCurrUser = function(name, nextFunction) {
     webDB.execute(
       'Select * FROM users WHERE username = "' + name + '";', function(row) {
         currUser = new User(row[0]);
         console.log(currUser);
+        nextFunction()
       }
     );
   };
 
-  webDB.execute('DROP TABLE IF EXISTS users;')
+  webDB.execute('DROP TABLE IF EXISTS users;');
   User.createTable();
   //hard coding in dummy users
 
@@ -37,12 +38,6 @@ var currUser;
   webDB.execute(
     'INSERT INTO users (userName, password, fav, visited, totalVisited, oauth) VALUES ("Cat", "124cat", "", "", 0, "");'
   );
-
-  //get user info from TABLE
-
-  var currUserName = 'Will';
-  var password = '123cat';
-
 
   module.User = User;
 })(window);

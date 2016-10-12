@@ -129,6 +129,10 @@ nav:hover ul {
   width: 100%
 }
 
+#submit-vote {
+  display: none;
+}
+
 /*twitter styles*/
 #twitter {
   font-family: sans-serif;
