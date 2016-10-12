@@ -9,6 +9,7 @@ app = express(),
 Twit = require('twit');
 
 var proxyTwit = function(request, response) {
+<<<<<<< HEAD
 console.log('Routing twitter request for tweets');
 var T = new Twit({
   consumer_key:         process.env.TWITTER_KEY,
