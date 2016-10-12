@@ -8,23 +8,27 @@
     <link type="text/css" rel="stylesheet" href="styles/layout.css">
     <link type="text/css" rel="stylesheet" href="styles/modules.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa|Kaushan+Script" rel="stylesheet">
-
-      <script id="tweet-template" type="text/x-handlebars-template">
-        <div class="tweet">
-          <img class="user-thumbnail" src={{userImg}}/>
-          <div class="author-link">
-            <p><a href="https://twitter.com/{{screenName}}"><span>{{name}}</span>@{{screenName}}</a></p>
-          </div>
-          <div class="tweet-content">
-            <p>{{text}}</p>
-            <img class="tweet-img" src="{{img}}"/>
-          </div>
-          <ul class="tweet-actions">
-            <li>{{likes}}</li>
-            <li>{{retweets}}</li>
-          </ul>
+    <!-- tweet template -->
+    <script id="tweet-template" type="text/x-handlebars-template">
+      <div class="tweet">
+        <img class="user-thumbnail" src={{userImg}}/>
+        <div class="author-link">
+          <p><a href="https://twitter.com/{{screenName}}"><span>{{name}}</span>@{{screenName}}</a></p>
         </div>
-      </script>
+        <div class="tweet-content">
+          <p>{{text}}</p>
+          <img class="tweet-img" src="{{img}}"/>
+        </div>
+        <ul class="tweet-actions">
+          <li>{{likes}}</li>
+          <li>{{retweets}}</li>
+        </ul>
+      </div>
+    </script>
+    <!-- voting options template -->
+    <script id="vote-template" type="text/x-handlebars-template">
+      <option value="{{name}}">{{name}}</option>
+    </script>
   </head>
   <body>
 
@@ -60,6 +64,12 @@
       </div>
       <div id="votes">
         <canvas id="vote-chart" width="4000" height="800"></canvas>
+        <form id="vote-form">
+          <select id="vote-select">
+            <option value="">Vote for your favorite wing!</option>
+          </select>
+          <button id="submit-vote" type="submit">Submit!</button>
+        </form>
       </div>
     </section>
 
