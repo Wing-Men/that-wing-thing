@@ -8,13 +8,16 @@
         console.log('the password is', pass[0].password);
         if(password === pass[0].password) {
           console.log('The password matches the username get user info');
-          User.setCurrUser(name);
+          User.setCurrUser(name, voteView.renderForm);
+          // debugger;
         } else {
           console.log('WRONG');
         }
       }
     );
   };
+
+  UserController.checkUserLogin('Will', '123cat');
 
   module.UserController = UserController;
 })(window);
