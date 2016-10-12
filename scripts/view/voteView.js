@@ -3,28 +3,13 @@
 (function(module) {
   var voteView = {};
   var ctx = $('#vote-chart');
-  var dummyResturuants = [];
+  var dummyResturaunts = [];
   var dummyVotes = [];
 
-  function Resturuant(name,votes) {
-    this.name = name;
-    this.votes = votes;
-  }
-
-  Resturuant.all = [];
-
-
-  for(var i = 0; i < 19; i++) {
-    var name = 'resturaunt ' + i;
-    var votes = 5;
-    var resturaunt = new Resturuant(name, votes);
-    Resturuant.all.push(resturaunt);
-  }
-
   voteView.generateChartData = function() {
-    for(i = 0; i < Resturuant.all.length; i++) {
-      dummyResturuants[i] = Resturuant.all[i].name;
-      dummyVotes[i] = Resturuant.all[i].votes;
+    for(var i = 0; i < Resturaunt.all.length; i++) {
+      dummyResturaunts[i] = Resturaunt.all[i].name;
+      dummyVotes[i] = Resturaunt.all[i].votes;
     }
   };
 
@@ -34,7 +19,7 @@
   };
 
   voteView.renderOptions = function() {
-    Resturuant.all.forEach(function(resturaunt) {
+    Resturaunt.all.forEach(function(resturaunt) {
       $('#vote-select').append(voteView.compileOption(resturaunt));
     });
   };
@@ -62,7 +47,7 @@
       e.preventDefault();
       var $vote = $('#vote-select').val();
       currUser.fav = $vote;
-      Resturuant.all[dummyResturuants.indexOf($vote)].votes += 1;
+      Resturaunt.all[dummyResturaunts.indexOf($vote)].votes += 1;
       $('#vote-form').fadeOut(500);
       voteView.renderChart();
     });
@@ -73,7 +58,7 @@
     var voteChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: dummyResturuants,
+        labels: dummyResturaunts,
         datasets: [{
           label: '# of Votes',
           data: dummyVotes,
