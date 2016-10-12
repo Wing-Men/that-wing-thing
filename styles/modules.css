@@ -14,6 +14,11 @@ nav:hover ul {
   display: block;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .icon-menu {
   font-size: 2em;
   text-align: right;

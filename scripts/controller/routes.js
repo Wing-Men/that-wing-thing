@@ -1,4 +1,7 @@
 'use strict';
 
-page('/tweets', twitterController.index);
+page('/', mapController.reveal);
+page('/wingwalk', progressController.reveal);
+// page('/checkin', checkinController.reveal);
+
 page();
