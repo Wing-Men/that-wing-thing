@@ -26,6 +26,12 @@ T.get('search/tweets', { q: '#cats', count: 5 }, function(err, data) {
 
 app.get('/tweets', proxyTwit);
 
+var getLocations = function(req, resp) {
+  console.log('Going for the SQL data');
+};
+
+app.get('/wings', getLocations);
+
 app.use(express.static('./'));
 
 app.get('*', function(request, response) {
@@ -114,7 +120,7 @@ connection.query('SELECT * FROM restaurants', { type:Sequelize.QueryTypes.SELECT
 });
 
 // Initialize server
-var server, app;
+var server;
 if (process.env.USE_RESTIFY) {
   var restify = require('restify');
   app = server = restify.createServer()
