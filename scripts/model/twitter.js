@@ -25,13 +25,9 @@
         tweet.likes = obj.favorite_count;
         if(obj.entities.media) {
           tweet.img = obj.entities.media[0].media_url;
-          console.log(tweet.img);
         }
         tweet.date = obj.created_at;
-        console.log(tweet);
-        // twitterObj.all.push(tweet);
         return tweet;
-        console.log(twitterObj.all);
       });
       nextFunction();
     }

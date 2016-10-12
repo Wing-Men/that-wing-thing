@@ -25,6 +25,44 @@ nav:hover ul {
   margin-left: 5%;
 
 }
+/*progress styles*/
+
+#user-progress {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#chart-container {
+  margin: 0 auto;
+  width: 70%;
+  position: relative;
+  height: 100px;
+}
+
+#wing-walk {
+  /*float: left;*/
+  background-color: black;
+  height: 5px;
+  width: 0;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  z-index: 1;
+}
+
+#wing-outline {
+  background: #CCC;
+  height: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+}
 
 /*twitter styles*/
 #twitter {
