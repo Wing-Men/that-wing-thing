@@ -23,6 +23,11 @@
   outline: 2px solid #631508;
 }
 
+.clickable:hover {
+  cursor: pointer;
+  color: #DDD;
+}
+
 .clearfix::after {
   content: "";
   display: table;
