@@ -7,6 +7,7 @@ app = express(),
 http = require('http'),
 sequelize = require('sequelize'),
 epilogue = require('epilogue'),
+bodyParser = require('body-parser'),
 Twit = require('twit');
 
 var proxyTwit = function(request, response) {
@@ -26,11 +27,24 @@ T.get('search/tweets', { q: '#cats', count: 5 }, function(err, data) {
 
 app.get('/tweets', proxyTwit);
 
+
+
+
+
+
 var getLocations = function(req, resp) {
+  res.send('working');
+};
+
+
+
+app.get('/wings', getLocations);{
   console.log('Going for the SQL data');
 };
 
-app.get('/wings', getLocations);
+
+
+
 
 app.use(express.static('./'));
 
@@ -68,6 +82,8 @@ con.end(function(err) { //eslint-disable-line
 //Sequelize
 var Sequelize = require('sequelize');
 var connection = new Sequelize('wingweek', 'root', process.env.MY_SQL_PASSWORD);
+
+var foo = connection.query(SQL SELECT * FROM);
 
 var atLocation = connection.define('restaurants', {
   id: {
@@ -127,7 +143,6 @@ if (process.env.USE_RESTIFY) {
   app.use(restify.queryParser());
   app.use(restify.bodyParser());
 } else {
-    var bodyParser = require('body-parser');
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
     server = http.createServer(app);
