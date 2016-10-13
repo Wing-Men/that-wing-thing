@@ -24,7 +24,7 @@
     webDB.execute(
       'SELECT password FROM users WHERE username = "' + name + '";', function(pass) {
         if(password === pass[0].password) {
-          User.setCurrUser(name, voteView.renderForm, UserProgressView.sitesVisitedtoArray);
+          User.setCurrUser(name, voteView.renderForm, UserProgressView.sitesVisitedtoArray, UserProgressView.renderList);
         } else {
           console.log('WRONG');
         }
@@ -54,6 +54,7 @@
     );
   };
 
+  UserController.checkUserLogin('Will', '123cat');
 
   module.UserController = UserController;
 })(window);
