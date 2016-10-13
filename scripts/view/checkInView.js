@@ -4,7 +4,7 @@
   checkInView.userName;
   checkInView.password;
 
-  checkInView.handleCheckName = function() {
+  checkInView.handleCheckIn = function() {
     $('#check-in-button').on('click', function(e){
       e.preventDefault();
       checkInView.userName = $('#username-input').val();
@@ -35,6 +35,19 @@
     });
   };
 
-  checkInView.handleCheckName();
+  checkInView.handleLogin = function() {
+    $('#login-button').on('click', function(e) {
+      e.preventDefault();
+      console.log('clicked');
+      checkInView.userName = $('#login-username').val();
+      checkInView.password = $('#login-password').val();
+      console.log('user name', checkInView.userName, 'password', checkInView.password);
+      UserController.checkUserLogin(checkInView.userName, checkInView.password);
+    });
+  };
+
+  checkInView.handleCheckIn();
+  checkInView.handleLogin();
+
   module.checkInView = checkInView;
 })(window);

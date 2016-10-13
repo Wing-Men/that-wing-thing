@@ -34,7 +34,9 @@
 
   UserController.addUser = function(name, password) {
     webDB.execute(
-      'INSERT INTO users (userName, password, fav, visited, totalVisited, oauth) VALUES ("' + name + '", "' + password + '", "", "", 0, "");'
+      'INSERT INTO users (userName, password, fav, visited, totalVisited, oauth) VALUES ("' + name + '", "' + password + '", "", "", 0, "");', function() {
+        UserController.checkUserLogin(name, password);
+      }
     );
   };
 
@@ -51,6 +53,7 @@
       'UPDATE users SET ' + paramString + ' = ' + param + ' WHERE userName = "' + user.userName + '";'
     );
   };
+
 
   module.UserController = UserController;
 })(window);
