@@ -30,6 +30,23 @@ a {
   margin-left: 5%;
 
 }
+
+/*about styles*/
+
+#about h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+#about p {
+  font-size: 1.3em;
+}
+
+#about div {
+  width: 80%;
+  margin: auto;
+}
+
 /*progress styles*/
 
 #user-progress {

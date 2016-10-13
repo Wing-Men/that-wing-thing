@@ -2,6 +2,8 @@
 
 (function(module) {
   var mapController = {};
+  var progressController = {};
+  var aboutController = {};
 
   mapController.reveal = function() {
     $('.tab-content').hide();
@@ -9,5 +11,17 @@
     $('#twitter').fadeIn();
   };
 
+  progressController.reveal = function() {
+    $('.tab-content').hide();
+    $('#user-progress').fadeIn();
+  };
+
+  aboutController.reveal = function() {
+    $('.tab-content').hide();
+    $('#about').fadeIn();
+  };
+
   module.mapController = mapController;
+  module.progressController = progressController;
+  module.aboutController = aboutController;
 })(window);
