@@ -3,3 +3,4 @@
 app.js
 test.js
 twitterToken.js
+/node_modules/*
