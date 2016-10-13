@@ -41,7 +41,6 @@
         <div class="icon-menu"></div>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/checkin">Check In</a></li>
           <li><a href="/wingwalk">Wing Walk</a></li>
           <li><a href="/about">About</a></li>
         </ul>
@@ -58,11 +57,29 @@
             <li>Restaurants Four</li>
             <li>Restaurants Five</li>
             <li>Restaurants Six</li>
+            <li>Restaurants Seven</li>
+            <li>Restaurants Eight</li>
+            <li>Restaurants Nine</li>
+            <li>Restaurants Ten</li>
+            <li>Restaurants Eleven</li>
+            <li>Restaurants Twelve</li>
+            <li>Restaurants Thirteen</li>
+            <li>Restaurants Fourteen</li>
+            <li>Restaurants Fifteen</li>
+            <li>Restaurants Sixteen</li>
+            <li>Restaurants Seventeen</li>
+            <li>Restaurants Eighteen</li>
+            <li>Restaurants Nineteen</li>
           </ul>
         </aside>
     </section>
 
     <section id="user-progress" class="tab-content">
+      <div id="visited-sites">
+        <p>Select the restaraunts you have visited</p>
+        <ul>
+        </ul>
+      </div>
       <div id="chart-container" class="clearfix">
         <div id="wing-walk"></div>
         <div id="wing-outline"></div>
@@ -75,11 +92,6 @@
         <div id="marker-filled-2" class="marker"></div>
         <div id="marker-filled-3" class="marker"></div>
         <div id="marker-filled-4" class="marker"></div>
-      </div>
-      <div id="visited-sites">
-        <p>Select the restaraunts you have visited</p>
-        <ul>
-        </ul>
       </div>
       <div id="votes">
         <canvas id="vote-chart" width="4000" height="800"></canvas>
@@ -104,18 +116,25 @@
       <p id="account-created-message"></p>
     </div>
 
+    <section id="about" class="tab-content">
+        <h2>What is Wing Week anyway?</h2>
+      <div>
+        <p>Portland Mercury is hosting its first annual Wing Week, October 24th through the 29th! 19 Portland restaurants are offering a half dozen of their famous wings for only $5!</p>
+      </div>
+    </section>
+
     <section id="twitter" class="tab-content">
     <h2><a href="https://twitter.com/search?q=%23wingweek&src=typd">#wingweek</a><h2>
     </section>
 
     <!-- vendor scripts -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5a0FL1YiEAyiJXueZISsLA8BxlWLReAs&callback=initMap"></script>
     <script type="text/javascript" src="vendor/scripts/page.js"></script>
     <script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="vendor/scripts/html5sql.js"></script>
     <script type="text/javascript" src="vendor/scripts/webdb.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5a0FL1YiEAyiJXueZISsLA8BxlWLReAs&callback=initMap"></script>
     <!-- model scripts -->
     <script type="text/javascript" src='scripts/model/resturauntDemo.js'></script>
     <script type="text/javascript" src="scripts/model/mapModel.js"></script>
@@ -136,6 +155,7 @@
     <script type="text/javascript" src="scripts/controller/twitterController.js"></script>
     <script type="text/javascript" src="scripts/controller/userController.js"></script>
     <script type="text/javascript" src="scripts/controller/progressController.js"></script>
+    <script type="text/javascript" src="scripts/controller/voteController.js"></script>
     <script type="text/javascript" src="scripts/controller/routes.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

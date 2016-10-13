@@ -21,7 +21,6 @@ var currUser;
     webDB.execute(
       'Select * FROM users WHERE username = "' + name + '";', function(row) {
         currUser = new User(row[0]);
-        console.log(currUser);
         nextFunction();
         finalFunction();
       }

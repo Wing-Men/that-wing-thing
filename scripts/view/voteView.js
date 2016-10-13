@@ -50,6 +50,7 @@
       Resturaunt.all[dummyResturaunts.indexOf($vote)].votes += 1;
       $('#vote-form').fadeOut(500);
       voteView.renderChart();
+      UserController.updateInfo(currUser, 'fav');
     });
   };
 

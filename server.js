@@ -7,30 +7,24 @@ app = express(),
 http = require('http'),
 sequelize = require('sequelize'),
 epilogue = require('epilogue'),
+bodyParser = require('body-parser'),
 Twit = require('twit');
 
+
+// Tweets
 var proxyTwit = function(request, response) {
-
-console.log('Routing twitter request for tweets');
-var T = new Twit({
-  consumer_key:         process.env.TWITTER_KEY,
-  consumer_secret:      process.env.TWITTER_KEY_PRIVATE,
-  access_token:         process.env.TWITTER_TOKEN,
-  access_token_secret:  process.env.TWITTER_TOKEN_PRIVATE
-});
-
-T.get('search/tweets', { q: '#cats', count: 5 }, function(err, data) {
-  response.json(data);
-});
+  var T = new Twit({
+    consumer_key:         process.env.TWITTER_KEY,
+    consumer_secret:      process.env.TWITTER_KEY_PRIVATE,
+    access_token:         process.env.TWITTER_TOKEN,
+    access_token_secret:  process.env.TWITTER_TOKEN_PRIVATE
+  });
+  T.get('search/tweets', { q: '#cats', count: 5 }, function(err, data) {
+    response.json(data);
+  });
 };
 
 app.get('/tweets', proxyTwit);
-
-var getLocations = function(req, resp) {
-  console.log('Going for the SQL data');
-};
-
-app.get('/wings', getLocations);
 
 app.use(express.static('./'));
 
@@ -43,27 +37,9 @@ app.listen(port, function() {
 console.log('Server started on port ' + port + '!');
 });
 
+
+
 var mysql = require('mysql');
-var mySqlPw = process.env.MY_SQL_PASSWORD;
-
-var con = mysql.createConnection({
-host: '138.68.20.49',
-user: 'root',
-password: mySqlPw
-});
-
-
-con.connect(function(err) {
-if(err) {
-  console.log('Error connecting to Db:', err);
-  return;
-}
-console.log('Connection established');
-});
-
-con.end(function(err) { //eslint-disable-line
-
-});
 
 //Sequelize
 var Sequelize = require('sequelize');
@@ -108,18 +84,17 @@ var atLocation = connection.define('restaurants', {
   tableName: 'restaurants'
 });
 
-connection.sync().then(function () {
-atLocation.findById(0).then(function(location){
-  console.log('worked', location);
-  });
-});
+connection.sync()
+  .then(function () {
+    atLocation.findById(0).then(function(location){
+      console.log('worked', location);
+    });
+  })
+  .catch(function(err){
+    console.log(err);
+  })
 
-connection.query('SELECT * FROM restaurants', { type:Sequelize.QueryTypes.SELECT })
-      .then(function(data) {
-        console.log(data);
-});
-
-// Initialize server
+// Initialize
 var server;
 if (process.env.USE_RESTIFY) {
   var restify = require('restify');
@@ -127,7 +102,6 @@ if (process.env.USE_RESTIFY) {
   app.use(restify.queryParser());
   app.use(restify.bodyParser());
 } else {
-    var bodyParser = require('body-parser');
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
     server = http.createServer(app);
@@ -140,7 +114,7 @@ epilogue.initialize({
 });
 
 // Create REST resource
-var userResource = epilogue.resource({
+var wingResource = epilogue.resource({
   model: atLocation,
   endpoints: ['/wings', '/wings/:id']
 });
