@@ -1,13 +1,29 @@
-nav ul {
-  display: none;
-  list-style: none;
+header {
+	border-bottom: 2px solid black;
+  margin-bottom: 5%;
 }
 
 nav {
   display: inline-block;
   float: right;
   margin: 3%;
-  width: 35%;
+  margin-bottom: 0;
+  width: 23%;
+}
+
+nav ul {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  margin-bottom: 0.5%;
+  text-align: left;
+}
+
+nav:last-child {
+  margin-bottom: px;
 }
 
 nav:hover ul {
@@ -22,24 +38,24 @@ a {
 .icon-menu {
   font-size: 2em;
   text-align: right;
+  width:
 }
 
 #logo {
   display: inline-block;
   float: left;
   margin-left: 5%;
-
 }
 
 /*about styles*/
 
-#about h1 {
-  font-size: 2em;
+#about h2 {
+  font-size: 1.5em;
   text-align: center;
 }
 
 #about p {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
 #about div {
@@ -253,6 +269,12 @@ img.tweet-img {
 }
 
 @media only screen and (min-width:700px) {
+  header {
+  	border-bottom: 2px solid black;
+  	width: 80%;
+  	margin: auto;
+  }
+
   nav ul {
     display: block;
     margin: 0 auto;
@@ -265,11 +287,18 @@ img.tweet-img {
     display: none;
   }
 
+  nav {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
   nav ul li {
     display: inline-block;
     margin-right: 2%;
     margin-left: 2%;
     margin-bottom: 1%;
+    font-size: 1.3em;
   }
 
   #logo {
@@ -278,14 +307,11 @@ img.tweet-img {
     width: 100%;
     margin: 2% 0;
     text-align: center;
-    font-size: 3em;
+    font-size: 4.5em;
   }
 
-  nav {
-    float: none;
-    display: block;
-    width: 100%;
-    margin: 0;
+  #about h2 {
+    font-size: 2em;
   }
 }
 
