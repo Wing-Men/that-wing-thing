@@ -17,11 +17,12 @@ var currUser;
       }
     );
   };
-  User.setCurrUser = function(name, nextFunction, finalFunction) {
+  User.setCurrUser = function(name, nextFunction, preFinalFunction, finalFunction) {
     webDB.execute(
       'Select * FROM users WHERE username = "' + name + '";', function(row) {
         currUser = new User(row[0]);
         nextFunction();
+        preFinalFunction();
         finalFunction();
       }
     );
