@@ -10,39 +10,27 @@ epilogue = require('epilogue'),
 bodyParser = require('body-parser'),
 Twit = require('twit');
 
+
+// Tweets
 var proxyTwit = function(request, response) {
-
-console.log('Routing twitter request for tweets');
-var T = new Twit({
-  consumer_key:         process.env.TWITTER_KEY,
-  consumer_secret:      process.env.TWITTER_KEY_PRIVATE,
-  access_token:         process.env.TWITTER_TOKEN,
-  access_token_secret:  process.env.TWITTER_TOKEN_PRIVATE
-});
-
-T.get('search/tweets', { q: '#cats', count: 5 }, function(err, data) {
-  response.json(data);
-});
+  var T = new Twit({
+    consumer_key:         process.env.TWITTER_KEY,
+    consumer_secret:      process.env.TWITTER_KEY_PRIVATE,
+    access_token:         process.env.TWITTER_TOKEN,
+    access_token_secret:  process.env.TWITTER_TOKEN_PRIVATE
+  });
+  T.get('search/tweets', { q: '#cats', count: 5 }, function(err, data) {
+    response.json(data);
+  });
 };
 
 app.get('/tweets', proxyTwit);
 
 
-
-
-
-
-var getLocations = function(req, resp) {
-  res.send('working');
-};
-
-
-
+// Restaurants API
 app.get('/wings', getLocations);{
   console.log('Going for the SQL data');
 };
-
-
 
 
 
@@ -82,8 +70,6 @@ con.end(function(err) { //eslint-disable-line
 //Sequelize
 var Sequelize = require('sequelize');
 var connection = new Sequelize('wingweek', 'root', process.env.MY_SQL_PASSWORD);
-
-var foo = connection.query(SQL SELECT * FROM);
 
 var atLocation = connection.define('restaurants', {
   id: {
