@@ -10,7 +10,6 @@
   UserProgressView.sitesVisitedtoArray = function() {
     currUser.visited = currUser.visited.split(',');
     currUser.visited.splice(currUser.visited.indexOf(''), 1);
-    console.log(currUser.visited);
   };
 
   UserProgressView.renderList = function() {
@@ -21,11 +20,11 @@
 
   UserProgressView.handleClick = function() {
     $('#visited-sites ul li').on('click', function() {
-      console.log('clicked');
       $(this).removeClass('clickable').addClass('visited').css('text-decoration', 'line-through');
       currUser.totalVisited += 1;
       currUser.visited.push($(this).text());
-      console.log(currUser.visited);
+      UserController.updateInfo(currUser, 'totalVisited');
+      UserController.updateInfo(currUser, 'visited');
       UserProgressView.renderProgress();
     });
   };
@@ -38,7 +37,6 @@
     //render some sort of chart
     var markerCount = 0;
     var progress = (currUser.totalVisited * 100 / 19).toString();
-    console.log(progress);
     $('#wing-walk').animate({width: progress + '%'},1500, 'swing');
     if(progress < 25) {
       markerCount = 0;
