@@ -26,17 +26,6 @@ var proxyTwit = function(request, response) {
 
 app.get('/tweets', proxyTwit);
 
-
-
-
-// Restaurants API
-// app.get('/wings', getLocations);
-//
-// function getLocations(){
-//
-// }
-
-
 app.use(express.static('./'));
 
 app.get('*', function(request, response) {
@@ -48,8 +37,9 @@ app.listen(port, function() {
 console.log('Server started on port ' + port + '!');
 });
 
+
+
 var mysql = require('mysql');
-var mySqlPw = process.env.MY_SQL_PASSWORD;
 
 //Sequelize
 var Sequelize = require('sequelize');
@@ -94,16 +84,15 @@ var atLocation = connection.define('restaurants', {
   tableName: 'restaurants'
 });
 
-connection.sync().then(function () {
-  atLocation.findById(0).then(function(location){
-    console.log('worked', location);
-  });
-});
-
-connection.query('SELECT * FROM restaurants', { type:Sequelize.QueryTypes.SELECT })
-      .then(function(data) {
-        console.log(data);
-});
+connection.sync()
+  .then(function () {
+    atLocation.findById(0).then(function(location){
+      console.log('worked', location);
+    });
+  })
+  .catch(function(err){
+    console.log(err);
+  })
 
 // Initialize
 var server;
@@ -125,7 +114,7 @@ epilogue.initialize({
 });
 
 // Create REST resource
-var userResource = epilogue.resource({
+var wingResource = epilogue.resource({
   model: atLocation,
   endpoints: ['/wings', '/wings/:id']
 });
