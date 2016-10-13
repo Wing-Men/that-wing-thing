@@ -17,27 +17,17 @@ var currUser;
       }
     );
   };
-  User.setCurrUser = function(name, nextFunction) {
+  User.setCurrUser = function(name, nextFunction, finalFunction) {
     webDB.execute(
       'Select * FROM users WHERE username = "' + name + '";', function(row) {
         currUser = new User(row[0]);
-        console.log(currUser);
-        nextFunction()
+        nextFunction();
+        finalFunction();
       }
     );
   };
 
-  webDB.execute('DROP TABLE IF EXISTS users;');
   User.createTable();
-  //hard coding in dummy users
-
-  webDB.execute(
-    'INSERT INTO users (userName, password, fav, visited, totalVisited, oauth) VALUES ("Will", "123cat", "", "", 0, "");'
-  );
-
-  webDB.execute(
-    'INSERT INTO users (userName, password, fav, visited, totalVisited, oauth) VALUES ("Cat", "124cat", "", "", 0, "");'
-  );
 
   module.User = User;
 })(window);

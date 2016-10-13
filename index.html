@@ -29,6 +29,9 @@
     <script id="vote-template" type="text/x-handlebars-template">
       <option value="{{name}}">{{name}}</option>
     </script>
+    <script id="site-list-template" type="text/x-handlebars-template">
+      <li class="clickable" value="{{name}}">{{name}}</li>
+    </script>
   </head>
   <body>
 
@@ -38,7 +41,6 @@
         <div class="icon-menu"></div>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/checkin">Check In</a></li>
           <li><a href="/wingwalk">Wing Walk</a></li>
           <li><a href="/about">About</a></li>
         </ul>
@@ -55,11 +57,29 @@
             <li>Restaurants Four</li>
             <li>Restaurants Five</li>
             <li>Restaurants Six</li>
+            <li>Restaurants Seven</li>
+            <li>Restaurants Eight</li>
+            <li>Restaurants Nine</li>
+            <li>Restaurants Ten</li>
+            <li>Restaurants Eleven</li>
+            <li>Restaurants Twelve</li>
+            <li>Restaurants Thirteen</li>
+            <li>Restaurants Fourteen</li>
+            <li>Restaurants Fifteen</li>
+            <li>Restaurants Sixteen</li>
+            <li>Restaurants Seventeen</li>
+            <li>Restaurants Eighteen</li>
+            <li>Restaurants Nineteen</li>
           </ul>
         </aside>
     </section>
 
     <section id="user-progress" class="tab-content">
+      <div id="visited-sites">
+        <p>Select the restaraunts you have visited</p>
+        <ul>
+        </ul>
+      </div>
       <div id="chart-container" class="clearfix">
         <div id="wing-walk"></div>
         <div id="wing-outline"></div>
@@ -81,6 +101,25 @@
           </select>
           <button id="submit-vote" type="submit">Submit!</button>
         </form>
+      </div>
+    </section>
+    <div id="login">
+      <form id="check-in-form">
+        <input id="username-input" type="text" name="name" value="user name">
+        <input id="password-input" type="password" name="name" value="">
+        <button id="check-in-button" type="submit" name="button">Check-in</button>
+        <p id="check-in-message"></p>
+        <input id="login-username" type="text" name="name" value="user name">
+        <input type="password" name="password" value="">
+        <button id="login-button" type="submit" name="button">Login</button>
+      </form>
+      <p id="account-created-message"></p>
+    </div>
+
+    <section id="about" class="tab-content">
+        <h2>What is Wing Week anyway?</h2>
+      <div>
+        <p>Portland Mercury is hosting its first annual Wing Week, October 24th through the 29th! 19 Portland restaurants are offering a half dozen of their famous wings for only $5!</p>
       </div>
     </section>
 
@@ -109,12 +148,14 @@
     <script type="text/javascript" src="scripts/view/voteView.js"></script>
     <script type="text/javascript" src="scripts/view/storeInfoView.js"></script>
     <script type="text/javascript" src="scripts/view/twitterView.js"></script>
+    <script type="text/javascript" src="scripts/view/checkInView.js"></script>
     <!-- controller scripts -->
     <script type="text/javascript" src="scripts/controller/clientController.js"></script>
     <script type="text/javascript" src="scripts/controller/siteController.js"></script>
     <script type="text/javascript" src="scripts/controller/twitterController.js"></script>
     <script type="text/javascript" src="scripts/controller/userController.js"></script>
     <script type="text/javascript" src="scripts/controller/progressController.js"></script>
+    <script type="text/javascript" src="scripts/controller/voteController.js"></script>
     <script type="text/javascript" src="scripts/controller/routes.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
