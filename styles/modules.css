@@ -30,6 +30,20 @@ a {
   margin-left: 5%;
 
 }
+/*checkin styles*/
+
+#password-input {
+  display: none;
+}
+
+#check-in-message {
+  display: none;
+}
+
+#account-created-message {
+  display: none;
+}
+
 /*progress styles*/
 
 #user-progress {

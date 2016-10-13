@@ -2,6 +2,24 @@
 (function(module) {
   var UserController = {};
 
+  UserController.checkForExistingUser = function(name, failFunction, nextFunction) {
+    console.log(name);
+    webDB.execute(
+      'SELECT userName FROM users WHERE userName = "' + name + '";', function(row) {
+        console.log(row[0]);
+        if(row[0]) {
+          console.log('there is a row');
+          //show message that username is taken
+          failFunction();
+        } else {
+          console.log('there isnt');
+          //show the box for password
+          nextFunction();
+        }
+      }
+    );
+  };
+
   UserController.checkUserLogin = function(name, password) {
     webDB.execute(
       'SELECT password FROM users WHERE username = "' + name + '";', function(pass) {
@@ -16,7 +34,13 @@
     );
   };
 
-  UserController.checkUserLogin('Will', '123cat');
+  UserController.addUser = function(name, password) {
+    webDB.execute(
+      'INSERT INTO users (userName, password, fav, visited, totalVisited, oauth) VALUES ("' + name + '", "' + password + '", "", "", 0, "");'
+    );
+  };
+
+  // UserController.checkUserLogin('Will', '123cat');
 
   module.UserController = UserController;
 })(window);

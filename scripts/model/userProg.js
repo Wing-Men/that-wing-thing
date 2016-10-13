@@ -28,17 +28,7 @@ var currUser;
     );
   };
 
-  webDB.execute('DROP TABLE IF EXISTS users;');
   User.createTable();
-  //hard coding in dummy users
-
-  webDB.execute(
-    'INSERT INTO users (userName, password, fav, visited, totalVisited, oauth) VALUES ("Will", "123cat", "", "", 0, "");'
-  );
-
-  webDB.execute(
-    'INSERT INTO users (userName, password, fav, visited, totalVisited, oauth) VALUES ("Cat", "124cat", "", "", 0, "");'
-  );
 
   module.User = User;
 })(window);
