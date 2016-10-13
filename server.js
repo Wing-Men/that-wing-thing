@@ -51,25 +51,6 @@ console.log('Server started on port ' + port + '!');
 var mysql = require('mysql');
 var mySqlPw = process.env.MY_SQL_PASSWORD;
 
-var con = mysql.createConnection({
-host: '138.68.20.49',
-user: 'root',
-password: mySqlPw
-});
-
-
-con.connect(function(err) {
-if(err) {
-  console.log('Error connecting to Db:', err);
-  return;
-}
-console.log('Connection established');
-});
-
-con.end(function(err) { //eslint-disable-line
-
-});
-
 //Sequelize
 var Sequelize = require('sequelize');
 var connection = new Sequelize('wingweek', 'root', process.env.MY_SQL_PASSWORD);
@@ -114,8 +95,8 @@ var atLocation = connection.define('restaurants', {
 });
 
 connection.sync().then(function () {
-atLocation.findById(0).then(function(location){
-  console.log('worked', location);
+  atLocation.findById(0).then(function(location){
+    console.log('worked', location);
   });
 });
 
@@ -124,7 +105,7 @@ connection.query('SELECT * FROM restaurants', { type:Sequelize.QueryTypes.SELECT
         console.log(data);
 });
 
-// Initialize server
+// Initialize
 var server;
 if (process.env.USE_RESTIFY) {
   var restify = require('restify');
