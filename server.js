@@ -27,11 +27,14 @@ var proxyTwit = function(request, response) {
 app.get('/tweets', proxyTwit);
 
 
-// Restaurants API
-app.get('/wings', getLocations);{
-  console.log('Going for the SQL data');
-};
 
+
+// Restaurants API
+// app.get('/wings', getLocations);
+//
+// function getLocations(){
+//
+// }
 
 
 app.use(express.static('./'));
