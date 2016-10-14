@@ -9,6 +9,18 @@
 
 }
 
+a:active, a:hover {
+    outline-width: 0;
+    background: red;
+    color: yellow;
+    /* margin-left: 10px; */
+    padding: .2em;
+    font-size: larger;
+}
+#check-in-form {
+  text-align: center;
+}
+
 #locations {
   display: none;
 }
