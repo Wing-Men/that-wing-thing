@@ -1,5 +1,12 @@
 'use strict';
 // console.log('map:', latLong);
+  var contentString ='<div id="content">'+
+            '<h1 id="firstHeading" class="firstHeading">Red Star Tavern</h1>'+
+            '<div id="markOneContent">'+
+            '<h4>(503) 222-0005</h4>'+
+            '<p>Red Star is serving: Slowly braised in Pork fat and champagne, these wings are topped with dill and a creamy blue cheese sauce. These wings use a delicate balance of flavors with heat and umame working to create a full body experience.</p>'+
+            '</div></div>';
+
 
   var portland = {lat: 45.5163719, lng: -122.6765228};
   var mapOptions = {
@@ -14,10 +21,12 @@
       position: { lat: 45.54845, lng: -122.613639 },
       map: map
     });
-    var markOne = new google.maps.Marker({
+
+    new google.maps.Marker({
       position: { lat: 45.5589999, lng: -122.6569361 },
       map: map
     });
+
     new google.maps.Marker({
       position:{ lat: 45.523062, lng: -122.676482 },
       map: map
@@ -42,7 +51,7 @@
       position:{ lat: 45.469103, lng: -122.652766 },
       map: map
     });
-    new google.maps.Marker({
+    var markOne = new google.maps.Marker({
       position:{ lat: 45.519840, lng: -122.677259 },
       map: map
     });
@@ -69,6 +78,12 @@
     new google.maps.Marker({
       position:{ lat: 45.542693, lng: -122.602827  },
       map: map
+    });
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    markOne.addListener('click', function() {
+      infowindow.open(map, markOne);
     });
   }
   window.map = map;
