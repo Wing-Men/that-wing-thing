@@ -103,17 +103,27 @@
         </form>
       </div>
     </section>
+
     <div id="login">
-      <form id="check-in-form">
-        <input id="username-input" type="text" name="name" placeholder="user name">
-        <input id="password-input" type="password" name="name" placeholder="password">
-        <button id="check-in-button" type="submit" name="button">Check-in</button>
-        <p id="check-in-message"></p>
-        <input id="login-username" type="text" name="name" placeholder="user name">
-        <input id="login-password" type="password" name="password" placeholder="password">
-        <button id="login-button" type="submit" name="button">Login</button>
-      </form>
-      <p id="account-created-message"></p>
+      <div class="form-container">
+        <div class="form-line">
+          <form id="check-in-form">
+            <input id="username-input" type="text" name="name" placeholder="user name">
+            <input id="password-input" type="password" name="name" placeholder="password">
+            <button id="check-in-button" type="submit" name="button">Check-in</button>
+            <p id="check-in-message"></p>
+          </form>
+        </div>
+
+        <div class="form-line">
+          <form id="login-form">
+            <input id="login-username" type="text" name="name" placeholder="user name">
+            <input id="login-password" type="password" name="password" placeholder="password">
+            <button id="login-button" type="submit" name="button">Login</button>
+            <p id="login-message"></p>
+          </form>
+        <div>
+      </div>
     </div>
 
     <section id="about" class="tab-content">

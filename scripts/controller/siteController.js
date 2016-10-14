@@ -13,6 +13,7 @@
 
   progressController.reveal = function() {
     $('.tab-content').hide();
+    checkInView.formView();
     $('#user-progress').fadeIn();
   };
 
