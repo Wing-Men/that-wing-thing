@@ -381,6 +381,7 @@ img.tweet-img {
     display: inline-block;
     width: 28.8%;
     margin: 0 2%;
+		vertical-align: top;
   }
 
 }
