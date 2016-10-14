@@ -12,8 +12,7 @@
   }
 
   function makeMarker(whom) {
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions)
-    for (i=0; i <= storeSites.length; i++){
+    for (var i=0; i <= storeSites.length; i++){
       var pin =  new google.maps.Marker({
         position: storeSites[i],
         map: map
