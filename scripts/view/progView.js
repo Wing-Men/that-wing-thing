@@ -13,12 +13,12 @@
   };
 
   UserProgressView.renderList = function() {
-    Resturaunt.all.forEach(function(resturaunt) {
+    Restaurant.all.forEach(function(restaurant) {
       // var li = UserProgressView.compileItem(resturaunt);
       // var resturauntName = li.split('<')[1].split('>')[1];
-      var $li = $('<li></li>').text(resturaunt.name);
+      var $li = $('<li></li>').text(restaurant.name);
       if(currUser){
-        if(currUser.visited.indexOf(resturaunt.name) !== -1) {
+        if(currUser.visited.indexOf(restaurant.name) !== -1) {
           $li.addClass('visited').css('text-decoration', 'line-through');
         } else {
           $li.addClass('clickable');

@@ -20,7 +20,7 @@
     webDB.execute(
       'SELECT password FROM users WHERE username = "' + name + '";', function(pass) {
         if(password === pass[0].password) {
-          User.setCurrUser(name, voteView.renderForm, UserProgressView.sitesVisitedtoArray, UserProgressView.renderList);
+          User.setCurrUser(name, voteView.renderForm, UserProgressView.sitesVisitedtoArray, UserProgressView.renderList, voteView.renderOptions, voteView.renderChart);
           $('#login-message').text('logging in as ' + name);
           $('#login').fadeOut(1000);
         } else {
