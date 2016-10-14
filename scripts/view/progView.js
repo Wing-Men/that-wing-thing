@@ -17,13 +17,10 @@
       // var li = UserProgressView.compileItem(resturaunt);
       // var resturauntName = li.split('<')[1].split('>')[1];
       var $li = $('<li></li>').text(resturaunt.name);
-      console.log($li);
       if(currUser){
-        console.log(currUser.visited.indexOf(resturaunt.name));
         if(currUser.visited.indexOf(resturaunt.name) !== -1) {
           $li.addClass('visited').css('text-decoration', 'line-through');
         } else {
-          console.log('havent been here');
           $li.addClass('clickable');
         }
       }
@@ -35,7 +32,6 @@
 
   UserProgressView.handleClick = function() {
     $('#visited-sites ul li').on('click', function() {
-      console.log('clicked');
       $(this).removeClass('clickable').addClass('visited').css('text-decoration', 'line-through');
       currUser.totalVisited += 1;
       currUser.visited.push($(this).text());

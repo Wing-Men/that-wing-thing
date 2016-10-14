@@ -4,6 +4,13 @@
   checkInView.userName;
   checkInView.password;
 
+  checkInView.formView = function() {
+    if(!currUser) {
+      $('#login').fadeIn(500);
+    } else {
+    }
+  };
+
   checkInView.handleCheckIn = function() {
     $('#check-in-button').on('click', function(e){
       e.preventDefault();
