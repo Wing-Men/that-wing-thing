@@ -10,7 +10,7 @@
 
 
   for(var i = 0; i < 11; i++) {
-    var name = 'resturaunt ' + i;
+    var name = 'restaurant ' + i;
     var votes = 5;
     var resturaunt = new Resturaunt(name, votes);
     Resturaunt.all.push(resturaunt);
