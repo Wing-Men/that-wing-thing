@@ -9,16 +9,18 @@
 
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-    var marker = new google.maps.Marker({
-      position: AlamedaBrewCo,
-      map: map
-    });
-    new google.maps.Marker({
-      position: AlbertStreetPub,
-      map: map
-    });
-
   }
+
+  function makeMarker(whom) {
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions)
+    for (i=0; i <= storeSites.length; i++){
+      var pin =  new google.maps.Marker({
+        position: storeSites[i],
+        map: map
+      })
+    }
+  };
+  window.map = map;
+  window.makeMarker = makeMarker;
   window.initMap = initMap;
 })(window);
