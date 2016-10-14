@@ -98,15 +98,15 @@ form {
   width: 50%;
   margin: 0 auto;
 }
+
 #login {
   display: none;
   position: absolute;
   width: 80%;
-  height: 80%;
-  top: 20%;
-  left: 10%;
+  top: 23%;
+  right: 7%;
   z-index: 1;
-  background-color: rgba(255, 255, 255, 0.95);;
+  background-color: rgba(255, 255, 255, 0.9);;
   border-radius: 5px;
   padding: 10px;
 }
@@ -136,7 +136,7 @@ form {
   position: relative;
   height: 100px;
   display: inline-block;
-  margin-bottom: 15%;
+  margin-bottom: 4%;
 }
 
 #visited-sites {
@@ -382,6 +382,12 @@ img.tweet-img {
     width: 28.8%;
     margin: 0 2%;
   }
+
+	#login {
+	  width: 350px;
+	  top: 28%;
+	  right: 41%;
+	}
 
 }
 
