@@ -2,7 +2,7 @@
 	{
 	  "locationName": "Nepo 24",
 	  "lat": 45.523062,
-	  "long": -122.676482,
+	  "lng": -122.676482,
 	  "phone": "503-288-8080",
 	  "url": "http://www.nepo42.com/",
 	  "rating": 0,
@@ -11,7 +11,7 @@
 	}, {
 	  "locationName": "Brix Tavern",
 	  "lat": 45.523062,
-	  "long": -122.676482,
+	  "lng": -122.676482,
 	  "phone": "503-943-5995",
 	  "url": "http://www.brixtavern.com",
 	  "rating": 0,
@@ -20,7 +20,7 @@
 	}, {
 	  "locationName": "Alameda Brewing Co. ",
 	  "lat": 45.542831,
-	  "long": 45.542831,
+	  "lng": 45.542831,
 	  "phone": "503-460-9025",
 	  "url": "http://www.alamedabrewhouse.com",
 	  "rating": 0,
@@ -28,7 +28,7 @@
 	}, {
 	  "locationName": "Burnside Brewing Co",
 	  "lat": 45.523062,
-	  "long": -122.676482,
+	  "lng": -122.676482,
 	  "phone": "946-8151",
 	  "url": "http://www.burnsidebrewco.com/",
 	  "rating": 0,
@@ -37,7 +37,7 @@
 	}, {
 	  "locationName": "Alberta Street Pub ",
 	  "lat": 45.523062,
-	  "long": -122.676482,
+	  "lng": -122.676482,
 	  "phone": "503.284.7665",
 	  "url": "www.albertastreetpub.com",
 	  "rating": 0,
@@ -46,7 +46,7 @@
 	}, {
 	  "locationName": "Fifth Quadrant",
 	  "lat": 45.514127,
-	  "long": -122.680055,
+	  "lng": -122.680055,
 	  "phone": "503-288-3996 ",
 	  "url": "http://www.newoldlompoc.com/5qhome.html",
 	  "rating": 0,
@@ -55,7 +55,7 @@
 	}, {
 	  "locationName": "Three Degrees",
 	  "lat": 45.528674,
-	  "long": -122.666179,
+	  "lng": -122.666179,
 	  "phone": "503.295.6166",
 	  "url": " www.threedegreesrestaurant.com ",
 	  "rating": 0,
@@ -64,7 +64,7 @@
 	}, {
 	  "locationName": "White Owl Social Club",
 	  "lat": 45.513485,
-	  "long": -122.657946,
+	  "lng": -122.657946,
 	  "phone": "503.236.9672",
 	  "url": "www.whiteowlsocialclub.com",
 	  "rating": 0,
@@ -73,7 +73,7 @@
 	}, {
 	  "locationName": "Reverend's BBQ",
 	  "lat": 45.469103,
-	  "long": -122.652766,
+	  "lng": -122.652766,
 	  "phone": "503.327.8755",
 	  "url": "www.reverendsbbq.com",
 	  "rating": 0,
@@ -82,7 +82,7 @@
 	},{
 	  "locationName": "Red Star Tavern",
 	  "lat": 45.519840,
-	  "long": -122.677259,
+	  "lng": -122.677259,
 	  "phone": "503.222.0005",
 	  "url": "www.redstartavern.com",
 	  "rating": 0,
@@ -91,7 +91,7 @@
 	}, {
 	  "locationName": "Kell's Brew Pub",
 	  "lat": 45.524381,
-	  "long": -122.694280,
+	  "lng": -122.694280,
 	  "phone": "503.719.7175",
 	  "url": "www.kellsbrewpub.com",
 	  "rating": 0,
@@ -100,7 +100,7 @@
 	}, {
 	  "locationName": "Ex Novo",
 	  "lat": 45.540023,
-	  "long": -122.668411,
+	  "lng": -122.668411,
 	  "phone": "503.894.8251",
 	  "url": "www.exnovobrew.com",
 	  "rating": 0,
@@ -109,7 +109,7 @@
 	}, {
 	  "locationName": "Double Barrel Tavern",
 	  "lat": 45.504663,
-	  "long": -122.645442,
+	  "lng": -122.645442,
 	  "phone": "503.234.1420",
 	  "url": "",
 	  "rating": 0,
@@ -118,7 +118,7 @@
 	},{
 	  "locationName": "Dig a Pony",
 	  "lat": 45.517412,
-	  "long": -122.660375,
+	  "lng": -122.660375,
 	  "phone": "971.279.4409",
 	  "url": "www.digaponyportland.com",
 	  "rating": 0,
@@ -127,7 +127,7 @@
 	}, {
 	  "locationName": "Club 21",
 	  "lat": 45.526748,
-	  "long": -122.644694,
+	  "lng": -122.644694,
 	  "phone": "503.235.5690",
 	  "url": "",
 	  "rating": 0,
@@ -136,7 +136,7 @@
 	}, {
 	  "locationName": "BTU Brasserie",
 	  "lat": 45.542693,
-	  "long": -122.602827,
+	  "lng": -122.602827,
 	  "phone": "(971) 407-3429",
 	  "url": "www.btupdx.com/",
 	  "rating": 0,

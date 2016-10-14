@@ -1,8 +1,23 @@
 'use strict';
 (function(module) {
 
-	$.get('/wings', function(data, status){
-		console.log(data);
+var informationArray = [];
+
+var getPoints = function() {
+  $.ajax({
+    url: "scripts/model/freshMaps.json",
+    dataType: "json",
+    success: function(response) {
+      $.each(response, function(item) {
+        informationArray.push(response[item]);
+      })
+    },
+		error: function (request, status, error) {
+			alert(request.responseText);
+		}
 	});
+}
+getPoints();
+window.storeSites = informationArray;
 
 })(window);

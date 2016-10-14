@@ -9,7 +9,7 @@
   Resturaunt.all = [];
 
 
-  for(var i = 0; i < 19; i++) {
+  for(var i = 0; i < 11; i++) {
     var name = 'resturaunt ' + i;
     var votes = 5;
     var resturaunt = new Resturaunt(name, votes);

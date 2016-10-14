@@ -37,7 +37,7 @@ app.listen(port, function() {
 console.log('Server started on port ' + port + '!');
 });
 
-
+app.use(express.static('/script/model/freshMaps.json'));
 
 var mysql = require('mysql');
 
