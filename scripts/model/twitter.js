@@ -13,8 +13,6 @@
     });
 
     function successHandler(data) {
-      console.log(data.statuses);
-      // twitterObj.all = data;
       twitterObj.all = data.statuses.map(function(obj) {
         var tweet = {};
         tweet.text = obj.text;
@@ -33,7 +31,7 @@
     }
 
     function errorHandler(error) {
-      console.log('ERROR', error);
+      console.log('Error:', error);
     }
   };
 

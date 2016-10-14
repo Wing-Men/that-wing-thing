@@ -3,7 +3,6 @@
 (function(module) {
   var twitterController = {
     index: function() {
-      console.log('showing tweets');
     }
   };
 

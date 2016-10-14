@@ -45,10 +45,8 @@
   checkInView.handleLogin = function() {
     $('#login-button').on('click', function(e) {
       e.preventDefault();
-      console.log('clicked');
       checkInView.userName = $('#login-username').val();
       checkInView.password = $('#login-password').val();
-      console.log('user name', checkInView.userName, 'password', checkInView.password);
       UserController.checkUserLogin(checkInView.userName, checkInView.password);
     });
   };

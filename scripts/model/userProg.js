@@ -13,7 +13,6 @@ var currUser;
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, userName VARCHAR, password VARCHAR, fav VARCHAR, visited VARCHAR, totalVisited DATE, oauth VARCHAR)',
       function() {
-        console.log('Successfully set up the articles table.');
       }
     );
   };

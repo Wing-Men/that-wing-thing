@@ -3,10 +3,8 @@
   var UserController = {};
 
   UserController.checkForExistingUser = function(name, failFunction, nextFunction) {
-    console.log(name);
     webDB.execute(
       'SELECT userName FROM users WHERE userName = "' + name + '";', function(row) {
-        console.log(row[0]);
         if(row[0]) {
           failFunction();
         } else {
@@ -24,7 +22,6 @@
           $('#login-message').text('logging in as ' + name);
           $('#login').fadeOut(1000);
         } else {
-          console.log('WRONG');
           $('#login-message').text('Incorrect username or password');
         }
       }
