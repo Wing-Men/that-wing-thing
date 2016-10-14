@@ -1,18 +1,17 @@
 'use strict';
 (function(module) {
 
-  function Restaurant(name, address, phone, website, longitude, latitude) {
+  function Restaurant(name, votes) {
     this.name = name;
-    this.address = address;
-    this.phone = phone;
-    this.website = website;
-    this.longitude = longitude;
-    this.latitude = latitude;
+    this.votes = votes;
   }
 
+  Restaurant.all = [];
+
+  //table for keeping track of votes on restaurants
   Restaurant.createTable = function() {
     webDB.execute(
-      'CREATE TABLE IF NOT EXISTS restaurants (id INTEGER PRIMARY KEY, name VARCHAR, address VARCHAR, phone VARCHAR, website VARCHAR, vote INTEGER, latitude VARCHAR, longitude VARCHAR)',
+      'CREATE TABLE IF NOT EXISTS votes (id INTEGER PRIMARY KEY, name VARCHAR, votes INTEGER)',
       function() {
         console.log('Restaurants table created');
       }
@@ -20,36 +19,32 @@
   };
 
   Restaurant.fetchAll = function() {
-    $.getJSON('/scripts/model/freshMaps.json', function(data) {
-      data.forEach(function(obj) {
-        var restaurant = new Restaurant(obj);
-        restaurant.insertRecord();
-      });
+    webDB.execute('SELECT * FROM votes', function(rows) {
+      if(rows.length) {
+        Restaurant.all = rows.map(function(obj) {
+          return new Restaurant(obj.name, obj.votes);
+        });
+      } else {
+        $.getJSON('/scripts/model/freshMaps.json', function(data) {
+          data.forEach(function(obj) {
+            var restaurant = new Restaurant(obj.locationName, Math.floor((Math.random() * 5) + 1));
+            Restaurant.all.push(restaurant);
+            restaurant.insertRecord();
+          });
+        });
+      }
     });
   };
-  Restaurant.fetchAll();
 
-  // Restaurant.prototype.insertRecord = function () {
-  //   webDB
-  // }
-
+  Restaurant.prototype.insertRecord = function () {
+    webDB.execute(
+      'INSERT INTO votes (name, votes) VALUES ("' + this.name + '", ' + this.votes + ');', function() {
+      }
+    );
+  };
 
   Restaurant.createTable();
-
-  // var restaurants = [];
-  // var latLong = [];
-  //
-  // webDB.execute('SELECT * FROM restaurants ORDER BY id', function(rows) {
-  //   for (var i = 0; i < rows.length; i++) {
-  //     var restaurant = new Restaurant(rows[i].name, rows[i].address, rows[i].phone, rows[i].website, rows[i].longitude, rows[i].latitude);
-  //     restaurants.push(restaurant);
-  //   }
-  //   console.log(restaurants);
-  //   for (var j = 0; j < restaurants.length; j++) {
-  //     latLong.push([Number(restaurants[j].latitude), Number(restaurants[j].longitude)]);
-  //   }
-  // });
-  // console.log(latLong);
+  Restaurant.fetchAll();
 
   module.Restaurant = Restaurant;
 })(window);

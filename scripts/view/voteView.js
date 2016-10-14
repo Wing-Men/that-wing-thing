@@ -3,13 +3,13 @@
 (function(module) {
   var voteView = {};
   var ctx = $('#vote-chart');
-  var dummyResturaunts = [];
-  var dummyVotes = [];
+  var restaurantNames = [];
+  var restaurantVotes = [];
 
   voteView.generateChartData = function() {
-    for(var i = 0; i < Resturaunt.all.length; i++) {
-      dummyResturaunts[i] = Resturaunt.all[i].name;
-      dummyVotes[i] = Resturaunt.all[i].votes;
+    for(var i = 0; i < Restaurant.all.length; i++) {
+      restaurantNames[i] = Restaurant.all[i].name;
+      restaurantVotes[i] = Restaurant.all[i].votes;
     }
   };
 
@@ -19,8 +19,8 @@
   };
 
   voteView.renderOptions = function() {
-    Resturaunt.all.forEach(function(resturaunt) {
-      $('#vote-select').append(voteView.compileOption(resturaunt));
+    Restaurant.all.forEach(function(restaurant) {
+      $('#vote-select').append(voteView.compileOption(restaurant));
     });
   };
 
@@ -29,6 +29,9 @@
       $('vote-form').fadeIn(500);
       voteView.handleVote();
       voteView.handleSubmit();
+    } else {
+      $('#vote-form').hide();
+      $('#vote-message').show();
     }
   };
 
@@ -47,8 +50,10 @@
       e.preventDefault();
       var $vote = $('#vote-select').val();
       currUser.fav = $vote;
-      Resturaunt.all[dummyResturaunts.indexOf($vote)].votes += 1;
-      $('#vote-form').fadeOut(500);
+      Restaurant.all[restaurantNames.indexOf($vote)].votes += 1;
+      var newScore = Restaurant.all[restaurantNames.indexOf($vote)].votes;
+      voteController.updateVotes(newScore, restaurantNames.indexOf($vote)); $('#vote-form').fadeOut(500);
+      $('#vote-message').fadeIn(500);
       voteView.renderChart();
       UserController.updateInfo(currUser, 'fav');
     });
@@ -59,10 +64,10 @@
     var voteChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: dummyResturaunts,
+        labels: restaurantNames,
         datasets: [{
           label: '# of Votes',
-          data: dummyVotes,
+          data: restaurantVotes,
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -99,8 +104,8 @@
     });
   };
 
-  voteView.renderOptions();
-  voteView.renderChart();
+  // voteView.renderOptions();
+  // voteView.renderChart();
 
   module.voteView = voteView;
 })(window);

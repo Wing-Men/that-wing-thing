@@ -13,12 +13,10 @@
   };
 
   UserProgressView.renderList = function() {
-    Resturaunt.all.forEach(function(resturaunt) {
-      // var li = UserProgressView.compileItem(resturaunt);
-      // var resturauntName = li.split('<')[1].split('>')[1];
-      var $li = $('<li></li>').text(resturaunt.name);
+    Restaurant.all.forEach(function(restaurant) {
+      var $li = $('<li></li>').text(restaurant.name);
       if(currUser){
-        if(currUser.visited.indexOf(resturaunt.name) !== -1) {
+        if(currUser.visited.indexOf(restaurant.name) !== -1) {
           $li.addClass('visited').css('text-decoration', 'line-through');
         } else {
           $li.addClass('clickable');
@@ -64,12 +62,6 @@
       $marker.fadeIn(timeInterval * i);
     }
   };
-
-  UserProgressView.updateUserProgress = function(){
-    //communicate with the controller to update the model
-    //cross off options of visited locations
-  };
-
 
   module.UserProgressView = UserProgressView;
 })(window);
