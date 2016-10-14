@@ -8,7 +8,6 @@
     if(!currUser) {
       $('#login').fadeIn(500);
     } else {
-      progressController.reveal();
     }
   };
 
