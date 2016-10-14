@@ -29,6 +29,9 @@
       $('vote-form').fadeIn(500);
       voteView.handleVote();
       voteView.handleSubmit();
+    } else {
+      $('#vote-form').hide();
+      $('#vote-message').show();
     }
   };
 
@@ -50,6 +53,7 @@
       Restaurant.all[restaurantNames.indexOf($vote)].votes += 1;
       var newScore = Restaurant.all[restaurantNames.indexOf($vote)].votes;
       voteController.updateVotes(newScore, restaurantNames.indexOf($vote)); $('#vote-form').fadeOut(500);
+      $('#vote-message').fadeIn(500);
       voteView.renderChart();
       UserController.updateInfo(currUser, 'fav');
     });

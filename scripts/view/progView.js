@@ -14,8 +14,6 @@
 
   UserProgressView.renderList = function() {
     Restaurant.all.forEach(function(restaurant) {
-      // var li = UserProgressView.compileItem(resturaunt);
-      // var resturauntName = li.split('<')[1].split('>')[1];
       var $li = $('<li></li>').text(restaurant.name);
       if(currUser){
         if(currUser.visited.indexOf(restaurant.name) !== -1) {
@@ -64,12 +62,6 @@
       $marker.fadeIn(timeInterval * i);
     }
   };
-
-  UserProgressView.updateUserProgress = function(){
-    //communicate with the controller to update the model
-    //cross off options of visited locations
-  };
-
 
   module.UserProgressView = UserProgressView;
 })(window);
