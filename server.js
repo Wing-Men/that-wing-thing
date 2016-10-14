@@ -19,7 +19,7 @@ var proxyTwit = function(request, response) {
     access_token:         process.env.TWITTER_TOKEN,
     access_token_secret:  process.env.TWITTER_TOKEN_PRIVATE
   });
-  T.get('search/tweets', { q: '#cats', count: 5 }, function(err, data) {
+  T.get('search/tweets', { q: '#portlandWingWeek', count: 5 }, function(err, data) {
     response.json(data);
   });
 };
