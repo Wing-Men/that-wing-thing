@@ -57,7 +57,7 @@
 	  "lat": 45.528674,
 	  "lng": -122.666179,
 	  "phone": "503.295.6166",
-	  "url": " www.threedegreesrestaurant.com ",
+	  "url": "http://www.threedegreesrestaurant.com ",
 	  "rating": 0,
 	  "foodType":"",
 		"address": "1510 SW Harbor Wy"
@@ -66,7 +66,7 @@
 	  "lat": 45.513485,
 	  "lng": -122.657946,
 	  "phone": "503.236.9672",
-	  "url": "www.whiteowlsocialclub.com",
+	  "url": "http://www.whiteowlsocialclub.com",
 	  "rating": 0,
 	  "foodType":"",
 		"address": " 1305 SE 8th, Portland, OR 97214"
@@ -75,7 +75,7 @@
 	  "lat": 45.469103,
 	  "lng": -122.652766,
 	  "phone": "503.327.8755",
-	  "url": "www.reverendsbbq.com",
+	  "url": "http://www.reverendsbbq.com",
 	  "rating": 0,
 	  "foodType":"",
 		"address": "7712 SE 13th, Portland, Oregon 97202"
@@ -84,7 +84,7 @@
 	  "lat": 45.519840,
 	  "lng": -122.677259,
 	  "phone": "503.222.0005",
-	  "url": "www.redstartavern.com",
+	  "url": "http://www.redstartavern.com",
 	  "rating": 0,
 	  "foodType":"",
 		"address": "503 SW Alder St, Portland, OR 97204"
@@ -93,7 +93,7 @@
 	  "lat": 45.524381,
 	  "lng": -122.694280,
 	  "phone": "503.719.7175",
-	  "url": "www.kellsbrewpub.com",
+	  "url": "http://www.kellsbrewpub.com",
 	  "rating": 0,
 	  "foodType":"",
 		"address": "210 NW 21st Ave, Portland, OR 97209"
@@ -102,7 +102,7 @@
 	  "lat": 45.540023,
 	  "lng": -122.668411,
 	  "phone": "503.894.8251",
-	  "url": "www.exnovobrew.com",
+	  "url": "http://www.exnovobrew.com",
 	  "rating": 0,
 	  "foodType":"",
 		"address": "2326 N Flint, Portland, OR 97227"
@@ -120,7 +120,7 @@
 	  "lat": 45.517412,
 	  "lng": -122.660375,
 	  "phone": "971.279.4409",
-	  "url": "www.digaponyportland.com",
+	  "url": "http://www.digaponyportland.com",
 	  "rating": 0,
 	  "foodType":"",
 		"address": "736 SE Grand, Portland, OR 97214"
@@ -138,7 +138,7 @@
 	  "lat": 45.542693,
 	  "lng": -122.602827,
 	  "phone": "(971) 407-3429",
-	  "url": "www.btupdx.com/",
+	  "url": "http://www.btupdx.com/",
 	  "rating": 0,
 	  "foodType":"",
 		"address": "5846 NE Sandy, Portland, OR 97213"
