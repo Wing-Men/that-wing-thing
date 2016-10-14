@@ -10,6 +10,7 @@ var getPoints = function() {
     success: function(response) {
       $.each(response, function(item) {
         informationArray.push(response[item]);
+				$("#locationList").append('<li><a href="'+response[item].url+'">'+ response[item].locationName +'</a></li>');
       })
     },
 		error: function (request, status, error) {
