@@ -8,12 +8,8 @@
       'SELECT userName FROM users WHERE userName = "' + name + '";', function(row) {
         console.log(row[0]);
         if(row[0]) {
-          console.log('there is a row');
-          //show message that username is taken
           failFunction();
         } else {
-          console.log('there isnt');
-          //show the box for password
           nextFunction();
         }
       }
@@ -25,8 +21,11 @@
       'SELECT password FROM users WHERE username = "' + name + '";', function(pass) {
         if(password === pass[0].password) {
           User.setCurrUser(name, voteView.renderForm, UserProgressView.sitesVisitedtoArray, UserProgressView.renderList);
+          $('#login-message').text('logging in as ' + name);
+          $('#login').fadeOut(1000);
         } else {
           console.log('WRONG');
+          $('#login-message').text('Incorrect username or password');
         }
       }
     );
@@ -54,7 +53,7 @@
     );
   };
 
-  UserController.checkUserLogin('Will', '123cat');
+  // UserController.checkUserLogin('Will', '123cat');
 
   module.UserController = UserController;
 })(window);
