@@ -19,6 +19,19 @@
     );
   };
 
+  Restaurant.fetchAll = function() {
+    $.getJSON('/scripts/model/freshMaps.json', function(data) {
+      data.forEach(function(obj) {
+        var restaurant = new Restaurant(obj);
+        restaurant.insertRecord();
+      });
+    });
+  };
+  Restaurant.fetchAll();
+
+  // Restaurant.prototype.insertRecord = function () {
+  //   webDB
+  // }
 
 
   Restaurant.createTable();
