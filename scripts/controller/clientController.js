@@ -19,6 +19,10 @@ var getPoints = function() {
 	});
 }
 getPoints();
+//This could cause problems. Since you're setting these sites inside an async call anything that relies
+//on this data being available as this array may not have it. If you want anything to use the storeSites
+//array whatever deals with that information is going to have to be inside the callback for the ajax
+//call. You'll probably have to pass it in as a callback.
 window.storeSites = informationArray;
 
 })(window);

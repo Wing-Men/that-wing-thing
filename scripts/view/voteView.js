@@ -48,6 +48,11 @@
   voteView.handleSubmit = function() {
     $('#submit-vote').on('click', function(e){
       e.preventDefault();
+      //by convention you should only use the $ to start a variable name
+      //if what's stored on there is a jQuery node. That lets you know
+      //that you have access to all of the jQuery methods to interact
+      //with whatever's stored on that variable. Here you're only
+      //storing a value.
       var $vote = $('#vote-select').val();
       currUser.fav = $vote;
       Restaurant.all[restaurantNames.indexOf($vote)].votes += 1;
