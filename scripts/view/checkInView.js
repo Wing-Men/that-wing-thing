@@ -5,6 +5,7 @@
   checkInView.password;
 
   checkInView.formView = function() {
+    //you can have an if block with no else.
     if(!currUser) {
       $('#login').fadeIn(500);
     } else {

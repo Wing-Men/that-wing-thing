@@ -44,7 +44,18 @@
     //render some sort of chart
     var markerCount = 0;
     var progress = (currUser.totalVisited * 100 / 19).toString();
+    //awesome that you threw some animations in. You may want to look into
+    //handling these things with CSS as it seems to deal with it a little
+    //more efficiently these days.
     $('#wing-walk').animate({width: progress + '%'},1500, 'swing');
+    //I believe this whole conditional could be rewritten as:
+    //markerCount = Math.floor(progress / 25);
+    //
+    //In cases such as these it's completely fine to have something
+    //a little more verbose in order to just get it working. But keep
+    //an eye out for repetetive code that has a pattern in its results
+    //as you could often end up with a relatively simple answer with
+    //a little refactoring.
     if(progress < 25) {
       markerCount = 0;
     } else if(progress >= 25 && progress < 50) {
